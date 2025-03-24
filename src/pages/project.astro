@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Projects from '../ui-components/Projects.svelte';
+---
+<Layout>
+  <!-- 
+  <div class="w-full h-full flex flex-col xl:flex-row items-start justify-start bg-black text-white px-5 py-5">
+    <div class="flex flex-col h-full w-3/5 justify-center items-start bg-grey-100 text-5xl">
+        <div class="w-full h-full flex flex-col justify-center items-start gap-10">
+          <span class="text-9xl font-extrabold text-glow-green ">Projects</span>
+          <span class="text-white opacity-50 font-thin">
+            Over the past few years, I have built and deployed multiple projects across various platforms. These projects range from automation tools to interactive user experiences, leveraging seamless integrations and functionality.
+          </span>
+        </div>
+    </div>
+    <div class="flex flex-col justify-center h-full w-2/5 overflow-x-hidden">
+      <Projects client:only="svelte" />
+    </div>
+    </div>
+  --> 
+  <div class="w-full h-full flex flex-col xl:flex-row items-start justify-start bg-black text-white px-5 py-5">
+    <div class="flex flex-col h-1/2 md:h-full w-full md:w-2/2 justify-center items-start bg-grey-100 text-5xl">
+        <div class="w-full h-full flex flex-col justify-center items-center md:items-start gap-5 lg:gap-10">
+          <span class="text-4xl md:text-6xl xl:text-9xl font-extrabold text-glow-green">Projects</span>
+          <span class="text-2xl text-center md:text-start md:flex md:text-3xl text-white opacity-50 font-thin">
+            Over the past few years, I have built and deployed multiple projects across various platforms.
+          </span>
+          <!-- <span class="text-9xl font-extrabold text-glow-green blur-glow animate-glow">PATTARATHON WATANAKIJ</span> -->
+        </div>
+    </div>
+    <div class="flex flex-col justify-center h-full w-full md:w-2/2 overflow-x-hidden">
+      <Projects client:only="svelte" />
+    </div>
+  </div>
+</Layout>

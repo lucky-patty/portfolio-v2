@@ -1,3 +1,20 @@
+---
+import "../styles/global.css";
+import Navbar from '../ui-components/Navbar.svelte';
+import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+
+import { Icon } from "astro-icon";
+
+const { title = "PW Portfolio", hideNavbar = false} = Astro.props;
+const currentPath = Astro.url.pathname;
+const isExp = Astro.url.pathname === '/experience';
+const isProject = Astro.url.pathname === '/project';
+const isContact = Astro.url.pathname === '/contact';
+---
+
+
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,10 +22,24 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+    <title>PW Portfolio</title>
+    <!--    <ViewTransitions /> -->
+    <ClientRouter />
 	</head>
-	<body>
-		<slot />
+  <body class="w-screen h-screen flex flex-col ">
+    <Navbar hideNavbar={hideNavbar} isExp={isExp} isProject={isProject} isContact={isContact} client:only="svelte" />
+    <!--
+    <header class={`p-4 w-full h-[10%] flex flex-row justify-between items-center bg-black ${hideNavbar ? 'hidden' : 'visible'}`}>
+      <a href="/" view-transition-name="logo" class="w-1/5 text-4xl font-bold text-white animate-fade-in animation-delay-500">
+        PW
+      </a>
+
+      <Navbar client:only="svelte" />
+    </header>
+    -->
+    <div class={`w-full ${hideNavbar ? 'h-full' : 'h-[95%] md:h-[90%]'}`}>
+      <slot />
+    </div>
 	</body>
 </html>
 

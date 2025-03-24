@@ -2,10 +2,17 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
+//import SplashScreen from '../components/SplashScreen.astro';
+import SplashTransition from '../ui-components/SplashTransition.svelte';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout hideNavbar={true}>
+  <!-- <Welcome /> -->
+  <!--  <SplashScreen mediaTransitionName="logo" /> -->
+  <SplashTransition client:only="svelte">
+      <h1 class="text-9xl font-bold" transition:persist transition:name="logo">PW</h1>
+  </SplashTransition>
+
 </Layout>

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SmoothScroll from '../ui-components/SmoothScroll.svelte';
+import TypingEffect from '../ui-components/TypingEffect.svelte';
+---
+
+<Layout>
+  <div class="w-full h-full flex flex-col items-start justify-start bg-black text-white py-5">
+    <SmoothScroll>
+      <div class="flex flex-col h-full w-full justify-center items-center bg-grey-100 text-5xl">
+        <div class="w-full h-1/5  flex justify-center items-center">
+          <span class="text-5xl md:text-6xl lg:text-9xl font-extrabold text-glow-green text-center ">Pattarathon Watanakij</span>
+          <!-- <span class="text-9xl font-extrabold text-glow-green blur-glow animate-glow">PATTARATHON WATANAKIJ</span> -->
+        </div>
+        <div class="w-full h-2/5 xl:h-1/5 flex flex-col lg:flex-row justify-start md:justify-center items-center lg:items-start gap-0 lg:gap-10">
+          <span class="h-full flex flex-col justify-center lg:justify-end text-3xl md:text-6xl xl:text-7xl opacity-50 ">I'm a passionate</span>
+          <TypingEffect client:only="svelte" words={["Web Developer", "Mobile Developer", "Software Developer", "Goblin In Tech"]} />
+        </div>
+      </div>
+    </SmoothScroll>
+
+  </div>
+</Layout>
